@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load disqus_tags %}
+{% block content %}
+    <div class="container">
+    <h1>{{ object.title }}</h1>
+    <h3>{{ object.description|safe }}</h3>
+    <p>{% trans 'Время наступления' %}: {{ object.time }}</p>
+        <ul>
+    {% if object.file %}
+            <li><a href="{{ object.file.url }}">{{ object.file }}</a></li>
+        {% else %}
+        <li><p>{% trans 'Нет прикрепленных файлов' %}</p></li>
+        {% endif %}
+        </ul>
+{#    {% disqus_dev %}#}
+{% disqus_show_comments %}
+    </div>
+{% endblock %}

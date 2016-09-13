@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <div class="container">
+    <h1>{{ object.title }}</h1>
+    <p>{% trans 'Автор напоминалки' %}: {{ object.to_user.username }}</p>
+    <br/>
+{#    <p>Участники: </p>#}
+{#    <ul>#}
+{#        {% for man in object_list %}#}
+{#        <li><a href="{% url 'profile' pk=object.to_user.user_profile.pk %}">{{ man.username }}</a></li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+        <h3>{{ object.description|safe }}</h3>
+    <p>{% trans 'Дата создания' %}: {{ object.created_at }}</p>
+    <br/>
+    <p>{% trans 'Время наступления' %}: {{ object.time }}</p>
+        <ul>
+    {% if object.file.count > 0 %}
+            <li>{{ file }}</li>
+        {% else %}
+        <li><p>{% trans 'Нет прикрепленных файлов' %}</p></li>
+        {% endif %}
+        </ul>
+    </div>
+{% endblock %}

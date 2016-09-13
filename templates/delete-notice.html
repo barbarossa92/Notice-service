@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<h1>{% trans 'Удаление напоминалки' %}</h1>
+
+<p>{% trans 'Вы уверены что хотите удалить' %} {{ object }}?</p>
+
+<form action="{% url "notice-delete" slug=object.slug %}" method="POST">
+  {% csrf_token %}
+
+  <input type="submit" value="{% trans 'Да удалить' %}" />
+  <a href="{% url "notice-list" %}">{% trans 'Нет спасибо.' %}</a>
+</form>
+
+{% endblock %}

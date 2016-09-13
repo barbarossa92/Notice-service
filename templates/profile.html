@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+    <div class="block2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    {% if user.user_profile.img %}
+                  <img src="{{ user.user_profile.img.url }}" height="" width="" alt="..." class="img-circle">
+                    {% else %}
+                    <img src="{% static 'default.png' %}" height="" width="" alt="..." class="img-circle">
+                    {% endif %}
+                <h2>{% trans 'Имя' %}: {{ user.username }}</h2>
+                <h3>Email: {{ user.email }}</h3>
+                <h3>{% trans 'Телефон' %}: {% if user.user_profile.phone %}{{ user.user_profile.phone }}
+                {% else %}
+                    {% trans 'Не указан' %}
+                    {% endif %}
+                </h3>
+                <a class="btn btn-success" href="{% url 'update-profile' pk=object.pk %}">{% trans 'Изменить' %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

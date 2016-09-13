@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-10 14:36+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/Main/contacts.html:8
+msgid "Связаться с нами"
+msgstr "Contact us"
+
+#: templates/Main/contacts.html:11
+msgid "Напишите нам и мы ответим"
+msgstr "Write to us and we will respond"
+
+#: templates/Main/content.html:8
+msgid "Успевать везде и всегда"
+msgstr "Succeeds to always and everywhere"
+
+#: templates/Main/content.html:9
+msgid "С нашим сервисом вы никуда не опоздаете"
+msgstr "With our service, you will not be late"
+
+#: templates/Main/content.html:10
+msgid "Начните пользоваться прямо сейчас!"
+msgstr "Get started now!"
+
+#: templates/Main/navbar.html:16
+msgid "Главная"
+msgstr "Home"
+
+#: templates/Main/navbar.html:17
+msgid "Контакты"
+msgstr "Contact us"
+
+#: templates/Main/navbar.html:19
+msgid "Создать напоминалку"
+msgstr "Create notice"
+
+#: templates/Main/navbar.html:20
+msgid "Мои напоминалки"
+msgstr "My notices"
+
+#: templates/Main/navbar.html:21
+msgid "Участие в напоминалках"
+msgstr "Take part in notice"
+
+#: templates/Main/navbar.html:22
+msgid "Выйти"
+msgstr "Logout"
+
+#: templates/Main/navbar.html:30
+msgid "Войти"
+msgstr "Login"
+
+#: templates/Main/navbar.html:31
+msgid "Регистрация"
+msgstr "Sign up"
+
+#: templates/account/signup.html:5
+msgid "Signup"
+msgstr ""
+
+#: templates/account/signup.html:8 templates/account/signup.html.py:18
+msgid "Sign Up"
+msgstr ""
+
+#: templates/account/signup.html:10
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: templates/create_note.html:7
+#, fuzzy
+#| msgid "Удаление напоминалки"
+msgid "Создание напоминалки"
+msgstr "Delete notice"
+
+#: templates/create_note.html:11
+msgid "Создать"
+msgstr "Create"
+
+#: templates/delete-notice.html:4
+msgid "Удаление напоминалки"
+msgstr "Delete notice"
+
+#: templates/delete-notice.html:6
+msgid "Вы уверены что хотите удалить"
+msgstr "Are you sure you want to delete"
+
+#: templates/delete-notice.html:11
+msgid "Да удалить"
+msgstr "Yes delete"
+
+#: templates/delete-notice.html:12
+msgid "Нет спасибо."
+msgstr "No, thanks"
+
+#: templates/invite-list.html:8
+msgid "Участник в напоминалках"
+msgstr "Participant in notices"
+
+#: templates/invite-list.html:17 templates/notice-list.html.py:18
+msgid "Подробнее"
+msgstr "Read more"
+
+#: templates/invite-list.html:38
+msgid "Вас еще не добавили ни в одну напоминалку"
+msgstr "You have not added to any reminder"
+
+#: templates/notice-list.html:8
+msgid "Личные напоминалки"
+msgstr "My notices"
+
+#: templates/notice-list.html:18
+msgid "Удалить"
+msgstr "Delete"
+
+#: templates/notice-list.html:19 templates/profile.html.py:21
+#: templates/update-notice.html:9 templates/update_profile.html.py:16
+msgid "Изменить"
+msgstr "Edit"
+
+#: templates/notice-list.html:25
+msgid "У вас нет личных напоминалок"
+msgstr "You have no personal notices"
+
+#: templates/one-invite.html:6
+msgid "Автор напоминалки"
+msgstr "Notice`s author"
+
+#: templates/one-invite.html:15
+msgid "Дата создания"
+msgstr "Created at"
+
+#: templates/one-invite.html:17 templates/one_notice.html.py:7
+msgid "Время наступления"
+msgstr "Time of onset"
+
+#: templates/one-invite.html:24 templates/one_notice.html.py:14
+msgid "Нет прикрепленных файлов"
+msgstr "No files"
+
+#: templates/profile.html:14
+msgid "Имя"
+msgstr "Name"
+
+#: templates/profile.html:16
+msgid "Телефон"
+msgstr "Phone"
+
+#: templates/profile.html:18
+msgid "Не указан"
+msgstr "Empty"

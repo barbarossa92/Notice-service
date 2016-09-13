@@ -1,0 +1,51 @@
+{% include 'Main/meta.html' %}
+{% include 'Main/navbar.html' %}
+{% block content %}
+{% endblock %}
+{% include 'Main/footer.html' %}
+{#<script>#}
+{#    $(document).ready(function(){#}
+{#        $(".item-qty").change(function(){#}
+{#                $.ajax({#}
+{#                    type: "GET",#}
+{#                    url: "{% url 'cart' %}",#}
+{#                    data: data,#}
+{#                    success: function(data) {#}
+{#                        $("#jquery-message").text("Added" + data.item_added + " Deleted " + data.deleted);#}
+{#                        if (data.deleted){#}
+{#                            $("#item-"+item).fadeOut();#}
+{#                            $("#subtotal").text(data.subtotal);#}
+{#                            $("#tax_total").text(data.tax_total);#}
+{#                            $("#cart_total").text(data.cart_total);#}
+{#                        } else {#}
+{#                            $("#item-line-total-"+item).text(data.line_total);#}
+{#                            $("#subtotal").text(data.subtotal);#}
+{#                            $("#tax_total").text(data.tax_total);#}
+{#                            $("#cart_total").text(data.cart_total);#}
+{#                        }#}
+{#                        if (data.total_items == 0){#}
+{#                            $(".table").fadeOut();#}
+{#                            var template = "{% include 'Main/empty_cart.html' %}";#}
+{#                            $(".main-content").html(template);#}
+{#                        }#}
+{#                        var message = "";#}
+{#                        if (data.item_added) {#}
+{#                            message = "New item added"#}
+{#                        } else if (data.deleted) {#}
+{#                            message = "Item removed"#}
+{#                        }else {#}
+{#                            message = "Item updated"#}
+{#                        }#}
+{#                        showFlashMessages(message);#}
+{#                        updateCartItemCount();#}
+{#                    },#}
+{#                    error: function (response, error) {#}
+{#                        console.log(response);#}
+{#                        console.log(error)#}
+{#                        $("#add-form").submit()#}
+{#                    }#}
+{#                });#}
+{#        });#}
+{#    }#}
+{#    );#}
+{#    </script>#}

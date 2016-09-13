@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+           <section class="category">
+            <div class="container">
+                <div class="row">
+                <h1>{% trans 'Личные напоминалки' %}</h1>
+                {% if user.to_user.count > 0 %}
+    {% for note in user.to_user.all %}
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{% static 'image-icon.png' %}" alt="...">
+                            <div class="caption">
+                                <h3>{{ note.title }}</h3>
+                                <p>{{ note.description|safe|truncatechars:100 }}</p>
+                                <p><a href="{% url 'notice-detail' slug=note.slug %}" class="btn btn-primary" role="button">{% trans 'Подробнее' %}</a><a href="{% url 'notice-delete' slug=note.slug %}" class="btn btn-default" role="button">{% trans 'Удалить' %}</a>
+                                <a href="{% url 'notice-update' slug=note.slug %}" class="btn btn-default" role="button">{% trans 'Изменить' %}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                        {% endfor %}
+                    {% if object_list.is_paginated %}
+            {% if  page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">назад</a> |
+            {% endif %}
+            страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+            {% if  page_obj.has_next %}|
+            <a href="?page={{ page_obj.next_page_number }}">вперед</a>
+            {% endif %}
+            {% endif %}
+                {% else %}
+                <h2>{% trans 'У вас нет личных напоминалок' %}</h2>
+                {% endif %}
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}

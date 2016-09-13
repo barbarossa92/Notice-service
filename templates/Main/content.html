@@ -1,0 +1,19 @@
+{% load i18n %}
+    <!--HOME SECTION-->
+    <div id="home-sec">
+    <div class="container" id="home" >
+        <div class="row text-center">
+            <div class="col-md-12">
+                <span class="head-main">Notice service</span>
+                <h2 class="head-sub-main">{% trans 'Успевать везде и всегда' %}</h2>
+                <h3 class="head-last">{% trans 'С нашим сервисом вы никуда не опоздаете' %}</h3>
+                {% if user.is_authenticated %}
+                    <p></p>
+                    {% else %}
+                <a href="/accounts/signup/" class="btn btn-danger btn-lg head-btn-one">{% trans 'Начните пользоваться прямо сейчас!' %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+         </div>
+    <!--END HOME SECTION-->

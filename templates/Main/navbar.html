@@ -1,0 +1,58 @@
+{% load staticfiles %}
+{% load i18n %}
+           <!-- NAV SECTION -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'home_page' %}">Notice</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'create_note' %}">{% trans 'Создать напоминалку' %}</a></li>
+                            <li><a href="{% url 'notice-list' %}">{% trans 'Мои напоминалки' %}</a></li>
+                            <li><a href="{% url 'invite-list' %}">{% trans 'Участие в напоминалках' %}</a></li>
+                        <li><a href="/accounts/logout/">{% trans 'Выйти' %} {{ user }}</a></li>
+                        <li><a href="{% url 'profile' pk=user.user_profile.pk %}">{% if user.user_profile.img %}<img src="{{ user.user_profile.img.url }}" height="40px" width="35px" alt="..." class="img-circle">
+                            {% else %}
+                            <img src="{% static 'default.png'%}" height="40px" width="35px" alt="..." class="img-circle">
+                            {% endif %}
+                            </a>
+                            </li>
+                        {% else %}
+                            <li><a href="#home-sec">{% trans 'Главная' %}</a></li>
+                        <li><a href="#contact-sec">{% trans 'Контакты' %}</a></li>
+                        <li class="pull-right"><a href="/accounts/login/">{% trans 'Войти' %}</a></li>
+                            <li class="pull-right"><a href="/accounts/signup/">{% trans 'Регистрация' %}</a></li>
+                        {% endif %}
+                     <div class="pull-right">
+                 <ul class="language">
+                    <li>
+                        <form id='lang_ru' action='/i18n/setlang/' method='POST'>{% csrf_token %}
+                            <input type='hidden' name='language' value='ru'/>
+                            <a href='#' title='RU' onclick="document.getElementById('lang_ru').submit()">
+                                <img src="{% static 'img/png/Russia.png' %}"/>
+                            </a>
+                        </form>
+                    </li>
+                     <li>
+                        <form id='lang_en' action='/i18n/setlang/' method='POST'>{% csrf_token %}
+                            <input type='hidden' name='language' value='en'/>
+                            <a href='#' title='EN' onclick="document.getElementById('lang_en').submit()">
+                                <img src="{% static 'img/png/United-Kingdom.png' %}"/>
+                            </a>
+                        </form>
+                     </li>
+                </ul>
+                         </div>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+         <!--END NAV SECTION -->

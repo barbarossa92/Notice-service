@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+           <section class="category">
+            <div class="container">
+                <div class="row">
+                    <h1>{% trans 'Участник в напоминалках' %}</h1>
+                {% if user.mens.count > 0 %}
+                    {% for note in user.mens.all %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{% static 'image-icon.png' %}" alt="...">
+                            <div class="caption">
+                                <h3>{{ note.title }}</h3>
+                                <p>{{ note.description|safe|truncatechars:100 }}</p>
+                                <p><a href="{% url 'invite-detail' slug=note.slug %}" class="btn btn-primary" role="button">{% trans 'Подробнее' %}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <h2>{% trans 'Вас еще не добавили ни в одну напоминалку' %}</h2>
+                {% endif %}
+                {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}
